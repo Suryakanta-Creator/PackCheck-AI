@@ -1,0 +1,8 @@
+backend/
+ai-services/
+database/
+docs/
+docker-compose.yml
+implementation_plan.md
+*.log
+uploads/
