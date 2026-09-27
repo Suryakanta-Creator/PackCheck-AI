@@ -34,6 +34,28 @@ PROJECT-SIH/
 
 ---
 
+## ▲ Deploy the Frontend on Vercel
+
+The repository now includes a root `vercel.json`, so Vercel can import this repository directly and build the React/Vite frontend from `frontend/`.
+
+### Required Vercel environment variable
+
+```text
+VITE_API_BASE_URL=https://your-deployed-spring-backend.example.com
+```
+
+The Vercel deployment hosts the **frontend only**. The Spring Boot API, FastAPI OCR service, and database remain separate services because they are long-running backend workloads and are not bundled into the static Vite deployment.
+
+After the Vercel URL is created, configure the Spring backend CORS environment with that URL, for example:
+
+```text
+CORS_ALLOWED_ORIGINS=https://your-project.vercel.app
+```
+
+Direct visits to `/scan`, `/scans`, scan-detail routes, and `/reviews` are handled by the included Vercel SPA rewrites.
+
+---
+
 ## 🌐 Prototype Deployment Preparation
 
 ### 1. Local Development Architecture
