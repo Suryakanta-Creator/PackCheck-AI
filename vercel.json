@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm --prefix frontend ci",
+  "buildCommand": "npm --prefix frontend run build",
+  "outputDirectory": "frontend/dist",
+  "rewrites": [
+    { "source": "/scan", "destination": "/index.html" },
+    { "source": "/scans", "destination": "/index.html" },
+    { "source": "/scans/:path*", "destination": "/index.html" },
+    { "source": "/reviews", "destination": "/index.html" }
+  ]
+}
